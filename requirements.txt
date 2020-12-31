@@ -1,0 +1,4 @@
+pytube
+keyboard
+selenium
+playsound
