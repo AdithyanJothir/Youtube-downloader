@@ -1,10 +1,13 @@
 from pytube import YouTube
 import keyboard
-import win32clipboard
-import time
 from playsound import playsound
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 
+browser = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
+browser.get("https://www.youtube.com/")
+    
     
 
 def video(data):
@@ -30,22 +33,14 @@ while True:
     while True:
         if keyboard.is_pressed('ctrl + q'):
             try:
-                keyboard.press_and_release('ctrl + c')
-                win32clipboard.OpenClipboard()
-                data = win32clipboard.GetClipboardData()
-                win32clipboard.CloseClipboard()
-                video(data)
+                video(browser.current_url)
                 break
             except:
                 break
                 
         elif keyboard.is_pressed('ctrl + y'):
             try:
-                keyboard.press_and_release('ctrl + c')
-                win32clipboard.OpenClipboard()
-                data = win32clipboard.GetClipboardData()
-                win32clipboard.CloseClipboard()
-                audio(data)
+                audio(browser.current_url)
                 break
             except:
                 break

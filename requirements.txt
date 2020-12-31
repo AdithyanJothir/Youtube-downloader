@@ -2,3 +2,4 @@ pytube
 keyboard
 selenium
 playsound
+win32clipboard
